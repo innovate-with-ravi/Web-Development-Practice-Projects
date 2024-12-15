@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 90vw;
+            height: 90vh;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        label[for="toggle-slider"] {
+            cursor: pointer;
+            text-indent: 9999px;
+            width: 100px;
+            height: 50px;
+            background-color: rgba(119, 214, 214, 0.824);
+            border-radius: 25px;
+            position: relative;
+            transition: all 0.4s ease-out;
+        }
+
+        label::after {
+            content: "";
+            width: 40px;
+            height: 40px;
+            background-color: rgba(14, 78, 78, 0.501);
+            border-radius: 50%;
+            position: absolute;
+            top: 5px;
+            left: 5px;
+            transition: all 0.4s ease-out;
+        }
+
+        input[type="checkbox"]:checked+label {
+            /* input[type="checkbox"]:checked+label -> means input[type="checkbox"]:checked(checked hone ke baad) ke adjacent baad wale label pe properties apply kro */
+            background-color: aqua;
+        }
+
+        input[type="checkbox"]:checked+label::after {
+            transform: translateX(50px);
+            background-color: rgb(14, 78, 78);
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox" name="" id="toggle-slider">
+    <label for="toggle-slider">On/Off</label>
+</body>
+
+</html>

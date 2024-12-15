@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            /* background-color: rgba(0, 0, 0, 0.685); */
+        }
+
+        /* .road {
+            width: 1500px;
+            height: 600px;
+            background-color: gray;
+            transform: rotateX(70deg) rotateY(0deg) rotateZ(0deg);
+            border: 5px solid black;
+        } */
+
+        .container {
+            /* width: 1500px; */
+            height: 600px;
+            position: relative;
+            background-image: url(/background-1.jpg);
+            background-repeat: repeat-x;
+        }
+
+
+        .car {
+            position: absolute;
+            bottom: 195px;
+            box-sizing: border-box;
+            animation: animateX 5s ease-out 0.5s infinite normal none;
+        }
+
+
+        .car>img {
+            width: 400px;
+        }
+
+        .wheel-1 {
+            position: absolute;
+            bottom: 6px;
+            left: 31px;
+            width: 80px;
+            height: 80px;
+            animation: tyre-rotation 5s ease-out 0.5s infinite normal none;
+            transform-origin: center center;
+            border-radius: 50%;
+        }
+
+        .wheel-2 {
+            position: absolute;
+            bottom: 5px;
+            right: 44px;
+            width: 80px;
+            height: 80px;
+            animation: tyre-rotation 5s ease-out 0.5s infinite normal none;
+            transform-origin: center center;
+            border-radius: 50%;
+        }
+
+        @keyframes animateX {
+            from {
+                left: 0%;
+            }
+
+            to {
+                left: 70%;
+            }
+        }
+
+        @keyframes tyre-rotation {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(1000deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="road">
+        </div>
+        <div class="car">
+            <img src="toycar.png" alt="">
+            <div class="tyres">
+                <div class="wheel-1"><img src="tyre.svg" alt=""></div>
+                <div class="wheel-2"><img src="tyre.svg" alt=""></div>
+                <div class="pollution"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

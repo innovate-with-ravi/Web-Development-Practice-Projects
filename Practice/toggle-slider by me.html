@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toogle-slider</title>
+    <style>
+        .container {
+            background-color: rgba(0, 0, 0, 0.753);
+            height: 80vh;
+            width: 80vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        input[type="checkbox"] {
+            display: none;
+        }
+
+        label[for="toogle-slider"] {
+            text-indent: 9999px;
+            height: 50px;
+            width: 100px;
+            border-radius: 40px;
+            background-color: aqua;
+            position: absolute;
+            cursor: pointer;
+            transition: all 0.4s ease-in;
+        }
+
+        .knob {
+            /* content: ""; */
+            position: absolute;
+            left: 5px;
+            top: 5px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: lightyellow;
+            transition: all 0.4s ease-in;
+            background-image: url('/sun.svg');
+        }
+
+        input:checked+label {
+            background-color: rgba(0, 255, 255, 0.506);
+        }
+
+        input:checked+label>.knob {
+            transform: translateX(50px);
+            background-color: rgba(176, 196, 222, 0.703);
+            background-image: url(/moon.svg);
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <input type="checkbox" name="" id="toogle-slider">
+        <label for="toogle-slider">on/off <span class="knob"></span></label>
+    </div>
+</body>
+
+</html>
